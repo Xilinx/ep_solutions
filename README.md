@@ -9,8 +9,8 @@ Clock Skew: Timing difference between clock arrivals at different endpoints. Lar
 Fanout: Number of loads driven by a single net. High-fanout nets can cause congestion and timing issues.  
 
 ## How to Run  
-All DRC Tcl files must be in <parent dir>.  
-source <parent dir>/all.tcl  
+Place all the DRC TCL files in a dir of your choice (e.g. "/parent/dir").    
+source /parent/dir/all.tcl  
 file mkdir ./postplace_drcs  
 ::drc::config -max 100 -odir ./postplace_drcs  
 report_drc -ruledecks EmuProto_checks -file ./pre_opt_drcs.rpt  
