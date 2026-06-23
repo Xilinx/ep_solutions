@@ -15,7 +15,7 @@ file mkdir ./postplace_drcs
 ::drc::config -max 100 -odir ./postplace_drcs  
 report_drc -ruledecks EmuProto_checks -file ./pre_opt_drcs.rpt  
 
-## Finalized DRCs
+## Current DRCs
 ### Clocking
 1. EP_CLK-1 — BUFGCE CE control driven by a very high-fanout clocked startup path
    * Stage: Pre-place
