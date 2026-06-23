@@ -15,97 +15,51 @@ file mkdir ./postplace_drcs
 ::drc::config -max 100 -odir ./postplace_drcs  
 report_drc -ruledecks EmuProto_checks -file ./pre_opt_drcs.rpt  
 
-Finalized DRCs
-Clocking
-
-EP_CLK-1 — BUFGCE CE control driven by a very high-fanout clocked startup path
-
-Stage: Pre-place
-
-Severity: CRITICAL WARNING
-
-EP_CLK-2 — Nets with USER_CLOCK_ROOT property set
-
-Stage: Pre-place
-
-Severity: INFO
-
-EP_CLK-3 — Parallel buffers driven by XPLL/CLKOUT0 with different CLOCK_DELAY_GROUP values
-
-Stage: Pre-place
-
-Severity: WARNING
-
-EP_CLK-4 — Missing/mismatch of CLOCK_DELAY_GROUP for MMCM feedback loop and CLKOUT0
-
-Stage: Pre-place
-
-Severity: WARNING
-
-EP_CLK-5 — Nets with CLOCK_BUFFER_TYPE property set
-
-Stage: Pre-place
-
-Severity: ADVISORY
-
-Netlist
-
-EP_OPT-1 — Nets with DONT_TOUCH=1
-
-Stage: Pre-place
-
-Severity: ADVISORY
-
-EP_OPT-3 — Nets with MARK_DEBUG=1
-
-Stage: Pre-place
-
-Severity: ADVISORY
-
-EP_NETL-1 — High fanout nets (≥2,000 and <100K)
-
-Stage: Pre-place
-
-Severity: ADVISORY
-
-EP_NETL-2 — Medium fanout nets (≥200 and <2,000)
-
-Stage: Pre-place
-
-Severity: ADVISORY
-
-EP_NETL-3 — Very high fanout nets (≥100K)
-
-Stage: Pre-place
-
-Severity: ADVISORY
-
-Partitioning
-
-EP_PART-1 — Modules with USER_SLR_ASSIGNMENT property
-
-Stage: Pre-place
-
-Severity: ADVISORY
-
-EP_PART-2 — Modules with USER_SLR_ASSIGNMENT=SLRx (specific SLR)
-
-Severity: ADVISORY
-
-EP_PART-3 — Modules with USER_CLUSTER property
-
-Severity: ADVISORY
-
-EP_PART-4 — Hard Pblocks
-
-Severity: ADVISORY
-
-EP_PART-5 — Inter-SLR paths with sub-optimal partitioning (datapath crosses SLRs unnecessarily)
-
-Stage: Post-place
-
-Severity: ADVISORY
-
-EP_PART-6 — Paths with start/endpoint in same SLR but partitioning causes SLR crossing
-
-Stage: Post-place
+## Finalized DRCs
+### Clocking
+1. EP_CLK-1 — BUFGCE CE control driven by a very high-fanout clocked startup path
+   * Stage: Pre-place
+   * Severity: CRITICAL WARNING
+2. EP_CLK-2 — Nets with `USER_CLOCK_ROOT` property set
+   * Stage: Pre-place
+   * Severity: INFO
+3. EP_CLK-3 — Parallel buffers driven by XPLL/CLKOUT0 with different `CLOCK_DELAY_GROUP` values
+   * Stage: Pre-place
+   * Severity: WARNING
+4. EP_CLK-4 — Missing/mismatch of `CLOCK_DELAY_GROUP` for MMCM feedback loop and CLKOUT0
+   * Stage: Pre-place
+   * Severity: WARNING
+5. EP_CLK-5 — Nets with `CLOCK_BUFFER_TYPE` property set
+   * Stage: Pre-place
+   * Severity: ADVISORY
+### Netlist
+1. EP_OPT-1 — Nets with `DONT_TOUCH=1`
+   * Stage: Pre-place
+   * Severity: ADVISORY
+2. EP_OPT-3 — Nets with `MARK_DEBUG=1`
+   * Stage: Pre-place
+   * Severity: ADVISORY
+3. EP_NETL-1 — High fanout nets (≥2,000 and <100K)
+   * Stage: Pre-place
+   * Severity: ADVISORY
+4. EP_NETL-2 — Medium fanout nets (≥200 and <2,000)
+   * Stage: Pre-place
+   * Severity: ADVISORY
+5. EP_NETL-3 — Very high fanout nets (≥100K)
+   * Stage: Pre-place
+   * Severity: ADVISORY
+### Partitioning
+1. EP_PART-1 — Modules with `USER_SLR_ASSIGNMENT` property
+   * Stage: Pre-place
+   * Severity: ADVISORY
+2. EP_PART-2 — Modules with `USER_SLR_ASSIGNMENT=SLRx` (specific SLR)
+   * Severity: ADVISORY
+3. EP_PART-3 — Modules with `USER_CLUSTER` property
+   * Severity: ADVISORY
+4. EP_PART-4 — Hard Pblocks
+   * Severity: ADVISORY
+5. EP_PART-5 — Inter-SLR paths with sub-optimal partitioning (datapath crosses SLRs unnecessarily)
+   * Stage: Post-place
+   * Severity: ADVISORY
+6. EP_PART-6 — Paths with start/endpoint in same SLR but partitioning causes SLR crossing
+   * Stage: Post-place
