@@ -1,5 +1,5 @@
 # Custom DRCs for E&P Customers  
-Custom Design Rule Checks (DRCs) for FPGA E&P customer flows in Vivado. These checks identify clocking issues, netlist problems, partitioning sub-optimalities, and timing violations to improve design closure and QoR.  
+Custom Design Rule Checks (DRCs) for FPGA Emulation and Prototyping customer flows in Vivado. These checks identify clocking issues, netlist problems, partitioning sub-optimalities, and timing violations to improve design closure and QoR.  
 
 ## Concepts    
 DRC (Design Rule Check): Automated checks run against a Vivado design to flag potential issues before or after placement.  
