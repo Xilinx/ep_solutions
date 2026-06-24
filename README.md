@@ -13,7 +13,7 @@ Place all the DRC TCL files in a dir of your choice (e.g. "/parent/dir").
 source /parent/dir/all.tcl  
 file mkdir ./postplace_drcs  
 ::drc::config -max 100 -odir ./postplace_drcs  
-report_drc -ruledecks EmuProto_checks -file ./pre_opt_drcs.rpt  
+report_drc -ruledecks EmuProto_checks -file ./postplace_drcs.rpt  
 
 ## Current DRCs
 ### Clocking
