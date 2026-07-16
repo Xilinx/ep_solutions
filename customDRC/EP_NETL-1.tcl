@@ -25,8 +25,7 @@ proc [lindex $DRCINFO 0] {} {
   set thresholdMin 2000  ;  catch { set thresholdMin [::drc::get_value high_fanout $thresholdMin] }
   set thresholdMax 100000 ; catch { set thresholdMax [::drc::get_value very_high_fanout $thresholdMax] }
   # DRC code
-  #set hfn [get_nets -quiet -hierarchical -top_net_of_hierarchical_group -segment -filter [format { NAME =~  "*" && TYPE == "SIGNAL" && ( FLAT_PIN_COUNT >= %s && FLAT_PIN_COUNT < %s ) } $thresholdMin $thresholdMax ] ] ; llength $hfn
-  set hfn [filter -quiet -hierarchical -top_net_of_hierarchical_group -segment [::drc::get spaths] [format { TYPE == "SIGNAL" && ( FLAT_PIN_COUNT >= %s && FLAT_PIN_COUNT < %s ) } $thresholdMin $thresholdMax ] ] ; llength $hfn
+  set hfn [get_nets -quiet -hierarchical -top_net_of_hierarchical_group -segment -filter [format { NAME =~  "*" && TYPE == "SIGNAL" && ( FLAT_PIN_COUNT >= %s && FLAT_PIN_COUNT < %s ) } $thresholdMin $thresholdMax ] ] ; llength $hfn
   if {[llength $hfn]} {
     set L [list]
     foreach net $hfn fpin [get_property -quiet FLAT_PIN_COUNT $hfn] {
