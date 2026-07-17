@@ -10,7 +10,7 @@ Fanout: Number of loads driven by a single net. High-fanout nets can cause conge
 
 ## How to Run  
 Place all the DRC TCL files in a dir of your choice (e.g. "/parent/dir").    
-source /parent/dir/all.tcl  
+source /parent/dir/main.tcl  
 file mkdir ./postplace_drcs  
 ::drc::config -max 100 -odir ./postplace_drcs  
 report_drc -ruledecks EmuProto_checks -file ./postplace_drcs.rpt  
