@@ -14,6 +14,7 @@ set DRCINFO [list \
   [file rootname [file tail [info script]]] \
   {EmuProto_checks} \
   {Netlist Checks} \
+  "Net with high fanout (>=$thresholdMin & <$thresholdMax)" \
   {Warning}
   ]
 
