@@ -21,7 +21,7 @@ proc [lindex $DRCINFO 0] {} {
   # DRC code
 
   # The MMCM feedback loop should have a CLOCK_DELAY_GROUP with CLKOUT0
-  foreach mmcm [get_cells -quiet -hier -filter {REF_NAME==MMCME5}] {
+  foreach mmcm [get_cells -quiet -hier -filter {REF_NAME==MMCME5 && COMPENSATION!=INTERNAL}] {
     set clkout0 [get_pins -quiet -of $mmcm -filter {IS_CONNECTED && REF_PIN_NAME==CLKOUT0}]
     set fbin [get_pins -quiet -of $mmcm -filter {IS_CONNECTED && REF_PIN_NAME==CLKFBIN}]
     if {$clkout0 != {}} {
